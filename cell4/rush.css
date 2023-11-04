@@ -1,0 +1,40 @@
+/* Estilos personalizados */
+body {
+    background-color: #faf9fc;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: black;
+    font-family: Impact, Haettenschweiler, sans-serif;
+    text-align: center;
+}
+
+.col-md-8{
+    color: black;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.container {
+    background-color: #baa9db;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: Verdana, Geneva;
+}
+
+/* Estilos para enlaces de navegación activos */
+.navbar .navbar-brand.active {
+    background-color: #ffffff; /* Cambia el color de fondo al seleccionado */
+    color: #baa9db;; /* Cambia el color del texto al seleccionado */
+    border-radius: 5px; /* Agrega bordes redondeados */
+}
