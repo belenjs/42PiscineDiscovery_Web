@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Change my color</title>
+    <link rel="stylesheet" href="backgroound.css">
+</head>
+
+<body>
+    
+    <center><button id="cambiarColor" onclick="cambiarColor()">Cambiar</button></center>
+    
+    <script>
+        function cambiarColor() {
+            // Generar colores aleatorios en formato hexadecimal
+
+            const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+            // cambiar el color de fondo de la página
+
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+
+    <!-- En este ejemplo, hemos incluido una función JavaScript llamada cambiarColor() directamente en el archivo HTML, 
+        y esta función se llama cuando se hace clic en el botón utilizando el atributo onclick. La función 
+        genera un color aleatorio y cambia el color de fondo del cuerpo de la página directamente en línea. 
+        Esto elimina la necesidad de un archivo JavaScript externo.-->
+</body>
+</html>

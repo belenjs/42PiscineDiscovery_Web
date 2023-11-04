@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globo con jQueryt</title>
+
+    <!--Aquí se le va a añadir el estilo con la etiqueta style dentro del html5-->
+    <style>
+        .globo {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%; /* Hace que el div sea un círculo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+    </style>
+
+    <!--Aquí se añade el script con el jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="globo" id="globo">Haz click en el globo</div>
+    
+    <script> // Aquí estamos declarando el elemento de globo con la variable constante globo y su variable cambiante que seria size por el tamaño
+        $(document).ready(function() { 
+            const globo = $('#globo');
+            let size = 200;
+            let colorIndex = 0;
+            const colors = ['red', 'green', 'blue'];
+
+            globo.click(function() { // Declaramos la función de que cuando se hace clik en el globo aumenta el tamaño 10px y cambia de color 1 + de la longitud de la cadena
+                if (size < 420) {
+                    size += 10;
+                    colorIndex = (colorIndex + 1) % colors.length;
+                    globo.css({
+                        backgroundColor: colors[colorIndex],
+                        width: size + 'px',
+                        height: size + 'px'
+                    });
+
+                } else {
+                    size = 200;
+                    colorIndex = 0;
+                    globo.css({
+                        backgroundColor: colors[colorIndex],
+                        width: size + 'px',
+                        height: size + 'px'
+                    });
+                }
+            });
+
+
+            globo.mouseleave(function() { // Declaramos la función de que cuando el ratón deja de estar encima del globo, este disminuye su tamaño 5px y cambia al color inverso del declarado anteriomente
+                if (size > 200) {
+                    size -= 5;
+                    colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+                    globo.css({
+                        backgroundColor: colors[colorIndex],
+                        width: size + 'px',
+                        height: size + 'px'
+                    });
+                }
+            });
+        });
+  
+    </script>
+</body>
+</html>

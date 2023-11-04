@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Color Aleatorio</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="backgrooundbis.css">
+</head>
+
+
+<!-- Crea una página web con un botón simple, cuando se haga click en él, el fondo 
+debe cambiar de color de forma aleatoria, usando esta vez jQuery-->
+
+
+<body>
+ 
+    <button id="cambiarColor">Cambiar Color de Fondo</button>
+   
+
+    <script>
+        $(document).ready(function() { // se utiliza para esperar a que el contenido de la pag HTML se haya cargado antes de ejecutar el código JS, .ready es un método de jQuery
+            $("#cambiarColor").click(function() {
+                var colorR = Math.floor(Math.random() * 256); // Rojo
+                var colorG = Math.floor(Math.random() * 256); // Verde
+                var colorB = Math.floor(Math.random() * 256); // Azul
+                var colorAleatorio = `rgb(${colorR}, ${colorG}, ${colorB})`; // representa a una cadena que representa un color en formato RGB utilizando valores de pasos anteriores, valores aleatorios de las otras variables.
+
+        
+                $(document.body).css("background-color", colorAleatorio) // se encarga de cambiar el color de fondo del elemento document.body, que representa el cuerpo (o fondo) de la página web, utilizando el valor almacenado en la variable colorAleatorio.
+            });
+        });
+
+               
+          
+    </script>
+</body>
+</html>

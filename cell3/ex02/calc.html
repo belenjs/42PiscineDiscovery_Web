@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+
+        *{
+            margin:0px;
+            padding:0px;
+        }
+
+        body{
+            background-color: navajowhite;
+            font-size: medium;
+            font-family: Arial, Helvetica;
+            display: flex;
+            height: 10vh;
+            align-items: center;
+        }
+
+        #calculator-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: dimgrey;
+            position: relative;
+            border-radius: 3px;
+        }
+
+        
+    
+
+
+    </style>   
+</head>
+<body>
+    <form id="calculator-form">
+        <input type="text" id="leftOperand" placeholder="Miembro izquierdo" required>
+        <select id="operator" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightOperand" placeholder="Miembro derecho" required>
+        <input type="submit" value="Try me!">
+    </form>
+
+    <script>
+        const calculatorForm = document.getElementById('calculator-form');
+
+        calculatorForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const leftOperand = parseFloat(document.getElementById('leftOperand').value);
+            const operator = document.getElementById('operator').value;
+            const rightOperand = parseFloat(document.getElementById('rightOperand').value);
+
+            if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
+                alert("Error :(");
+                return;
+            }
+
+
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = leftOperand + rightOperand;
+                    break;
+                case '-':
+                    result = leftOperand - rightOperand;
+                    break;
+                case '*':
+                    result = leftOperand * rightOperand;
+                    break;
+                case '/':
+                    if (rightOperand === 0) {
+                        alert("It's over 9000!");
+                        return;
+                    }
+                    result = leftOperand / rightOperand;
+                    break;
+                case '%':
+                    if (rightOperand === 0) {
+                        alert("It's over 9000!");
+                        return;
+                    }
+                    result = leftOperand % rightOperand;
+                    break;
+                default:
+                    alert("It's over 9000!");
+                    return;
+            }
+
+            alert(`El resultado es: ${result}`);
+            console.log(`Resultado: ${result}`);
+        });
+    </script>
+</body>
+</html>

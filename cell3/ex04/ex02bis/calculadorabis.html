@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora Básica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #9fded8;
+      margin: 0;
+      padding: 0;
+    }
+    #calculator {
+      margin: 20px auto;
+      width: 400px; /* Aumenta el ancho para hacerlo rectangular */
+      padding: 20px; /* Aumenta el espacio interior para alinear el contenido */
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    input, select, button {
+      width: 100px; /* Aumenta el ancho de los campos de entrada */
+      padding: 10px;
+      margin: 5px;
+      font-size: 18px;
+    }
+    select {
+      width: 120px; /* Aumenta el ancho del select */
+    }
+    #result {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+    #calculate {
+      background-color: #ef7d36;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+   </style>
+</head>
+<body>
+
+<div id="calculator">
+  <input type="text" id="leftOperand" placeholder="Número">
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+  <input type="text" id="rightOperand" placeholder="Número">
+  <button id="calculate">Try me!</button>
+</div>
+
+<div id="result"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Función para mostrar la ventana emergente cada 30 segundos
+  function showAlert() {
+    alert("Please, use me...");
+  }
+  setInterval(showAlert, 30000);
+
+  // Manejar el clic en el botón "Try me!"
+  $("#calculate").click(function() {
+    var leftOperand = parseInt($("#leftOperand").val());
+    var operator = $("#operator").val();
+    var rightOperand = parseInt($("#rightOperand").val());
+
+    if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
+      alert("Error :(");
+      console.log("Error :(");
+    } else if (operator === "/" && rightOperand === 0 || operator === "%" && rightOperand === 0) {
+      alert("It's over 9000!");
+      console.log("It's over 9000!");
+    } else {
+      var result;
+      switch (operator) {
+        case "+":
+          result = leftOperand + rightOperand;
+          break;
+        case "-":
+          result = leftOperand - rightOperand;
+          break;
+        case "*":
+          result = leftOperand * rightOperand;
+          break;
+        case "/":
+          result = leftOperand / rightOperand;
+          break;
+        case "%":
+          result = leftOperand % rightOperand;
+          break;
+        default:
+          break;
+      }
+      alert("Resultado: " + result);
+      console.log("Resultado: " + result);
+      $("#result").text("Resultado: " + result);
+    }
+  });
+});
+</script>
+
+</body>
+</html>

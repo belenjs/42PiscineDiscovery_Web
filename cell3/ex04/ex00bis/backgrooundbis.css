@@ -1,0 +1,32 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Establecer el alto del cuerpo al 100% de la ventana */
+}
+
+fondo-aleatorio {
+    background-color: black;
+
+} /* Color de fondo inicial */
+
+
+
+button {  /* Gracias al body, el botón siempre estará centrado en la pág. dando igual el tamaño del navegador */
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 40vh 40vh;
+    background-color: rgb(164, 167, 167);
+    text-decoration: none;
+    text-align: center;
+    
+    
+    
+    
+}

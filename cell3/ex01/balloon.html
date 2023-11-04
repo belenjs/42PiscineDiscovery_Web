@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+            
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(246, 26, 6);
+            border-radius: 50%;
+            align-items: center;
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+        }
+    </style>
+</head>
+<body>
+    <div id="circulo"></div>
+    
+    <script>
+        const circle = document.getElementById('circulo')
+        let colorActual = 0; // 0: rojo, 1: verde, 2: azul
+
+        circle.addEventListener('click', () => {
+            // Cambia el tamaño del círculo
+            const tamañoActual = circle.clientWidth;
+            let newSize = tamañoActual + 10;
+
+            // Si el tamaño supera los 420px, vuelve al tamaño original
+            if (newSize > 420) {
+                newSize = 200;
+            }
+
+            circle.style.width = newSize + 'px';
+            circle.style.height = newSize + 'px';
+
+              /// Cambia el color del círculo
+              switch (colorActual) {
+                case 0:
+                    circle.style.backgroundColor = 'rgb(6, 246, 26)'; // Verde
+                    colorActual = 1;
+                    break;
+                case 1:
+                    circle.style.backgroundColor = 'rgb(6, 26, 246)'; // Azul
+                    colorActual = 2;
+                    break;
+                case 2:
+                    circle.style.backgroundColor = 'rgb(246, 26, 6)'; // Rojo
+                    colorActual = 0;
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        circle.addEventListener('mouseenter', () => {
+            // Cuando el ratón entra en el círculo
+            circle.style.backgroundColor = 'rgb(6, 26, 246)'; // Azul
+        });
+
+        circle.addEventListener('mouseleave', () => {
+            // Cuando el ratón sale del círculo
+            // Reduce el tamaño del círculo en 5px, pero no menos de 200px
+            const tamañoActual = circle.clientWidth;
+            let newSize = tamañoActual- 5;
+            newSize = Math.max(newSize, 200);
+
+            circle.style.width = newSize + 'px';
+            circle.style.height = newSize + 'px';
+
+            // Cambia el color del círculo en el orden inverso
+            switch (currentColor) {
+                case 0:
+                    circle.style.backgroundColor = 'rgb(6, 26, 246)'; // Azul
+                    currentColor = 1;
+                    break;
+                case 1:
+                    circle.style.backgroundColor = 'rgb(246, 26, 6)'; // Rojo
+                    currentColor = 0;
+                    break;
+                case 2:
+                    circle.style.backgroundColor = 'rgb(6, 246, 26)'; // Verde
+                    currentColor = 2;
+                    break;
+                default:
+                    break;
+            }
+        });
+        
+    
+          
+    </script>
+</body>
+</html>
