@@ -1,0 +1,53 @@
+body {
+    margin:0;
+    padding: 0;font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    text-decoration: cornsilk;
+    overflow-x: hidden; /* Evita la barra de deplazamiento horizontal*/
+
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
+
+.parallax {
+    background-attachment: fixed; /* Fija la imagen de fondo*/
+    background-size: cover;
+}
+
+#section1 {
+    background-image: url(pastoraleman1.jpeg);
+    font-weight: bold;
+    
+    
+}
+
+#section2 {
+    background-image: url(pastoraleman2.jpeg);
+    font-weight: bold;
+}
+
+.space {
+    background-color: black;
+    font-weight: bold;
+}
+
+/* estilos de texto */
+
+.parallax {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateZ(0);
+    transition: transform 0.5s ease-in-out;
+}
+.parallax:hover {
+    transform: translateZ(-50px); /* Ajusta el valor para el efecto deseado */
+}

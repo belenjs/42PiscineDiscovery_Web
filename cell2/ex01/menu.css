@@ -1,0 +1,59 @@
+body{
+    background-color: burlywood;
+    margin:0;
+    padding:0;
+}
+
+h1{
+    font-size: x-large;
+    font-family: fantasy;
+    text-decoration-color: black;
+    text-align: center;
+}
+
+nav{
+    background-color: darkgoldenrod;
+    text-align: right;
+}
+
+
+.dropbtn {
+    background-color: rgb(181, 151, 75);
+    color: rgb(7, 7, 7);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #fbfdfb;
+  }
